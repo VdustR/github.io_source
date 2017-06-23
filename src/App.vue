@@ -1,5 +1,6 @@
 <template lang="pug">
   div#app
+    link(href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet")
     router-view
 </template>
 
