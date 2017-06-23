@@ -4,7 +4,10 @@
     article
       p This is my first github.io page.
       p Say 'Hello World!'
-    div
+    div.pages
+      mu-raised-button(@click="open(githubUrl)")
+        img.github(:src="githubImg")
+        | &nbsp;GitHub
       mu-raised-button(@click="open(codepenUrl)")
         img.codepen(:src="codepenImg")
 </template>
@@ -15,7 +18,9 @@ export default {
   data () {
     return {
       codepenUrl: 'https://codepen.io/VdustR',
-      codepenImg: require('@/assets/img/codepen.svg')
+      codepenImg: require('@/assets/img/codepen.svg'),
+      githubUrl: 'https://github.com/VdustR',
+      githubImg: require('@/assets/img/github.svg')
     }
   },
 
@@ -28,6 +33,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.codepen
+.pages img
   height: 1em
+
+.github
+  filter: invert(100%)
 </style>
