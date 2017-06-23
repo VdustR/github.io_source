@@ -1,7 +1,8 @@
 <template lang="pug">
   div#app
     link(href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet")
-    router-view
+    mu-content-block
+      router-view
 </template>
 
 <script>

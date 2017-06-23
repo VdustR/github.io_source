@@ -1,11 +1,11 @@
 <template lang="pug">
   div
-    h1 Hello, I am ViPro.
-    article
+    h1.title Hi, I'm ViPro.
+    article.main-article
       p This is my first github.io page.
       p.code echo
         = ' '
-        span(style="color: red;") >>
+        span.highlight-text >>
         = ' '
         | 'Hello World!
         span.cursor '
@@ -38,11 +38,10 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.pages img
-  height: 1em
+$primaryColor: red
 
-.github
-  filter: invert(100%)
+.terminal-font
+  font-family: 'VT323', monospace
 
 @keyframes blink
   0%
@@ -52,6 +51,24 @@ export default {
   100%
     background-color: rgba(255, 255, 255, 0)
 
+.title
+  @extend .terminal-font
+  transform: translateX(0px) translateY(2rem) rotateZ(-30deg)
+  display: inline-block
+  color: $primaryColor
+
+.highlight-text
+  color: $primaryColor
+
+.main-article
+  padding-left: 10rem
+
+.pages img
+  height: 1em
+
+.github
+  filter: invert(100%)
+
 .cursor
   animation-name: blink
   animation-duration: 0.5s
@@ -60,6 +77,6 @@ export default {
   display: inline-block
 
 .code
+  @extend .terminal-font
   font-size: 2rem
-  font-family: 'VT323', monospace
 </style>
